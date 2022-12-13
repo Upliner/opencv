@@ -13,7 +13,7 @@ ocv_add_dispatched_file_force_all("int8layers/layers_common" AVX2 AVX512_SKX)
 
 ocv_add_module(dnn opencv_core opencv_imgproc WRAP python java objc js)
 
-ocv_option(OPENCV_DNN_OPENCL "Build with OpenCL support" HAVE_OPENCL AND NOT APPLE)
+ocv_option(OPENCV_DNN_OPENCL "Build with OpenCL support" HAVE_OPENCL)
 
 if(OPENCV_DNN_OPENCL AND HAVE_OPENCL)
   add_definitions(-DCV_OCL4DNN=1)

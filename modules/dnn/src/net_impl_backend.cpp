@@ -198,7 +198,10 @@ void Net::Impl::setPreferableTarget(int targetId)
             if (preferableBackend == DNN_BACKEND_DEFAULT ||
                 preferableBackend == DNN_BACKEND_OPENCV)
 #endif  // HAVE_INF_ENGINE
+            {
+                CV_LOG_WARNING(NULL, "OpenCL for DNN is not supported. Fallback to CPU.");
                 preferableTarget = DNN_TARGET_CPU;
+            }
 #else
             bool fp16 = ocl::Device::getDefault().isExtensionSupported("cl_khr_fp16");
             if (!fp16 && targetId == DNN_TARGET_OPENCL_FP16)
