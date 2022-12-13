@@ -77,6 +77,8 @@ typedef struct AVCodecTag {
     unsigned int tag;
 } AVCodecTag;
 
+#include <libavcodec/version.h>
+
 #if (LIBAVCODEC_VERSION_INT <= AV_VERSION_INT(54, 51, 100))
 #define AV_CODEC_ID_H264 CODEC_ID_H264
 #define AV_CODEC_ID_H263 CODEC_ID_H263
